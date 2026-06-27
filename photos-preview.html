@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos — William Vacchiano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500;1,8..60,600&family=Montserrat:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .masonry-grid {
+      columns: 4;
+      column-gap: 12px;
+    }
+    @media (max-width: 1100px) { .masonry-grid { columns: 3; } }
+    @media (max-width: 700px)  { .masonry-grid { columns: 2; } }
+    @media (max-width: 420px)  { .masonry-grid { columns: 1; } }
+
+    .masonry-grid .photo-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      cursor: pointer;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      transition: border-color 0.25s, transform 0.25s;
+      display: block;
+    }
+    .masonry-grid .photo-item:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-2px);
+    }
+    .masonry-grid .photo-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .masonry-grid .photo-caption {
+      padding: 7px 10px 9px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* Lightbox overrides — larger image */
+    .lightbox-inner { max-width: 1000px; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-title">William <span>Vacchiano</span></a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="teacher.html">The Teacher</a>
+  <a href="lineage.html">Lineage</a>
+  <a href="influence.html">Influence</a>
+  <a href="students.html">Students</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="quotes.html">Quotes</a>
+  <a href="photos.html">Photos</a>
+  <a href="watch.html">Interviews</a>
+  <a href="recordings.html">Recordings</a>
+  <a href="biography.html">Biography</a>
+</nav>
+
+<main>
+  <div class="page-header" style="padding-bottom:1.5rem;">
+    <div class="container">
+      <p class="eyebrow">Gallery</p>
+      <h1>Photos</h1>
+      <p class="subtitle">A life in music &mdash; from Carnegie Hall to Juilliard</p>
+    </div>
+  </div>
+
+  <div class="page-content" style="padding-top:0;">
+    <div class="container">
+      <div class="masonry-grid">
+        <div class="photo-item" data-index="0">
+          <img src="images/photo-1000.jpg" alt="85th B-day Party at Juilliard" loading="lazy">
+          <div class="photo-caption">85th B-day Party at Juilliard</div>
+        </div>
+        <div class="photo-item" data-index="1">
+          <img src="images/photo-1001.jpg" alt="Albert Mingrone, Varriale, Vacchiano, Joseph Greco" loading="lazy">
+          <div class="photo-caption">Albert Mingrone, Varriale, Vacchiano, Joseph Greco</div>
+        </div>
+        <div class="photo-item" data-index="2">
+          <img src="images/photo-1002.jpg" alt="B-day Party at Juilliard, photo by Broiles" loading="lazy">
+          <div class="photo-caption">B-day Party at Juilliard, photo by Broiles</div>
+        </div>
+        <div class="photo-item" data-index="3">
+          <img src="images/photo-1003.jpg" alt="Bob Johnson, Dick San Filippo" loading="lazy">
+          <div class="photo-caption">Bob Johnson, Dick San Filippo</div>
+        </div>
+        <div class="photo-item" data-index="4">
+          <img src="images/photo-1004.jpg" alt="Glantz, Vacchiano, Prager" loading="lazy">
+          <div class="photo-caption">Glantz, Vacchiano, Prager</div>
+        </div>
+        <div class="photo-item" data-index="5">
+          <img src="images/photo-1005.jpg" alt="Goldfarb, Vacc, Roger Murtha, Edwin De Groat, Claude Gordon" loading="lazy">
+          <div class="photo-caption">Goldfarb, Vacc, Roger Murtha, Edwin De Groat, Claude Gordon</div>
+        </div>
+        <div class="photo-item" data-index="6">
+          <img src="images/photo-1006.jpg" alt="Gould, Schwarz, Vacc, Mills" loading="lazy">
+          <div class="photo-caption">Gould, Schwarz, Vacc, Mills</div>
+        </div>
+        <div class="photo-item" data-index="7">
+          <img src="images/photo-1007.jpg" alt="Izzy Blank and Vacchiano" loading="lazy">
+          <div class="photo-caption">Izzy Blank and Vacchiano</div>
+        </div>
+        <div class="photo-item" data-index="8">
+          <img src="images/photo-1008.jpg" alt="Lavignac Solfege Book" loading="lazy">
+          <div class="photo-caption">Lavignac Solfege Book</div>
+        </div>
+        <div class="photo-item" data-index="9">
+          <img src="images/photo-1009.jpg" alt="Ligotti and Vacchiano" loading="lazy">
+          <div class="photo-caption">Ligotti and Vacchiano</div>
+        </div>
+        <div class="photo-item" data-index="10">
+          <img src="images/photo-1010.jpg" alt="Maria Alessi, Joe Jr, Carmine Fornarotto, and Vacchiano" loading="lazy">
+          <div class="photo-caption">Maria Alessi, Joe Jr, Carmine Fornarotto, and Vacchiano</div>
+        </div>
+        <div class="photo-item" data-index="11">
+          <img src="images/photo-1011.jpg" alt="NYP Brass" loading="lazy">
+          <div class="photo-caption">NYP Brass</div>
+        </div>
+        <div class="photo-item" data-index="12">
+          <img src="images/photo-1012.jpg" alt="NYP in 1939, Full Orchestra" loading="lazy">
+          <div class="photo-caption">NYP in 1939, Full Orchestra</div>
+        </div>
+        <div class="photo-item" data-index="13">
+          <img src="images/photo-1013.jpg" alt="NYP on Japan Tour, 1961" loading="lazy">
+          <div class="photo-caption">NYP on Japan Tour, 1961</div>
+        </div>
+        <div class="photo-item" data-index="14">
+          <img src="images/photo-1014.jpg" alt="Outside the Tokyo Hotel, May 9th, 1961" loading="lazy">
+          <div class="photo-caption">Outside the Tokyo Hotel, May 9th, 1961</div>
+        </div>
+        <div class="photo-item" data-index="15">
+          <img src="images/photo-1015.jpg" alt="Polisi, Vacchiano, and Romm" loading="lazy">
+          <div class="photo-caption">Polisi, Vacchiano, and Romm</div>
+        </div>
+        <div class="photo-item" data-index="16">
+          <img src="images/photo-1016.jpg" alt="Prager and Vacchiano Rehearsing" loading="lazy">
+          <div class="photo-caption">Prager and Vacchiano Rehearsing</div>
+        </div>
+        <div class="photo-item" data-index="17">
+          <img src="images/photo-1017.jpg" alt="Soper, Vacchiano, Schlueter at 80th B-day" loading="lazy">
+          <div class="photo-caption">Soper, Vacchiano, Schlueter at 80th B-day</div>
+        </div>
+        <div class="photo-item" data-index="18">
+          <img src="images/photo-1018.jpg" alt="Tenore and Vacc 2000 in Queens" loading="lazy">
+          <div class="photo-caption">Tenore and Vacc 2000 in Queens</div>
+        </div>
+        <div class="photo-item" data-index="19">
+          <img src="images/photo-1019.jpg" alt="The Crying Bench" loading="lazy">
+          <div class="photo-caption">The Crying Bench</div>
+        </div>
+        <div class="photo-item" data-index="20">
+          <img src="images/photo-1020.jpg" alt="Vacc Shaking Hands at 90th B-day Party" loading="lazy">
+          <div class="photo-caption">Vacc Shaking Hands at 90th B-day Party</div>
+        </div>
+        <div class="photo-item" data-index="21">
+          <img src="images/photo-1021.jpg" alt="Vacchiano's NYP ID Card" loading="lazy">
+          <div class="photo-caption">Vacchiano's NYP ID Card</div>
+        </div>
+        <div class="photo-item" data-index="22">
+          <img src="images/photo-1022.jpg" alt="Vacchiano and Arturo Sandoval" loading="lazy">
+          <div class="photo-caption">Vacchiano and Arturo Sandoval</div>
+        </div>
+        <div class="photo-item" data-index="23">
+          <img src="images/photo-1023.jpg" alt="Vacchiano and Baker" loading="lazy">
+          <div class="photo-caption">Vacchiano and Baker</div>
+        </div>
+        <div class="photo-item" data-index="24">
+          <img src="images/photo-1024.jpg" alt="Vacchiano and Fornarotto" loading="lazy">
+          <div class="photo-caption">Vacchiano and Fornarotto</div>
+        </div>
+        <div class="photo-item" data-index="25">
+          <img src="images/photo-1025.jpg" alt="Vacchiano and Fred Mills, 1995" loading="lazy">
+          <div class="photo-caption">Vacchiano and Fred Mills, 1995</div>
+        </div>
+        <div class="photo-item" data-index="26">
+          <img src="images/photo-1026.jpg" alt="Vacchiano and Mase at 85th B-day Party" loading="lazy">
+          <div class="photo-caption">Vacchiano and Mase at 85th B-day Party</div>
+        </div>
+        <div class="photo-item" data-index="27">
+          <img src="images/photo-1027.jpg" alt="Vacchiano and Ranier De Intinis" loading="lazy">
+          <div class="photo-caption">Vacchiano and Ranier De Intinis</div>
+        </div>
+        <div class="photo-item" data-index="28">
+          <img src="images/photo-1028.jpg" alt="Vacchiano and Schwarz in Aspen" loading="lazy">
+          <div class="photo-caption">Vacchiano and Schwarz in Aspen</div>
+        </div>
+        <div class="photo-item" data-index="29">
+          <img src="images/photo-1029.jpg" alt="Vacchiano and Varriale at Gettysburg" loading="lazy">
+          <div class="photo-caption">Vacchiano and Varriale at Gettysburg</div>
+        </div>
+        <div class="photo-item" data-index="30">
+          <img src="images/photo-1030.jpg" alt="Vacchiano at Hartt School of Music" loading="lazy">
+          <div class="photo-caption">Vacchiano at Hartt School of Music</div>
+        </div>
+        <div class="photo-item" data-index="31">
+          <img src="images/photo-1031.jpg" alt="Vacchiano at His NYBCS Roast" loading="lazy">
+          <div class="photo-caption">Vacchiano at His NYBCS Roast</div>
+        </div>
+        <div class="photo-item" data-index="32">
+          <img src="images/photo-1032.jpg" alt="Vacchiano at the Beach in Maine" loading="lazy">
+          <div class="photo-caption">Vacchiano at the Beach in Maine</div>
+        </div>
+        <div class="photo-item" data-index="33">
+          <img src="images/photo-1033.jpg" alt="Vacchiano Casual" loading="lazy">
+          <div class="photo-caption">Vacchiano Casual</div>
+        </div>
+        <div class="photo-item" data-index="34">
+          <img src="images/photo-1034.jpg" alt="Vacchiano Conducting" loading="lazy">
+          <div class="photo-caption">Vacchiano Conducting</div>
+        </div>
+        <div class="photo-item" data-index="35">
+          <img src="images/photo-1035.jpg" alt="Vacchiano Feeding the Ducks and Geese" loading="lazy">
+          <div class="photo-caption">Vacchiano Feeding the Ducks and Geese</div>
+        </div>
+        <div class="photo-item" data-index="36">
+          <img src="images/photo-1036.jpg" alt="Vacchiano Getting Ready to Enjoy a Lobster Dinner" loading="lazy">
+          <div class="photo-caption">Vacchiano Getting Ready to Enjoy a Lobster Dinner</div>
+        </div>
+        <div class="photo-item" data-index="37">
+          <img src="images/photo-1037.jpg" alt="Vacchiano Giving a Lecture at the NYBCS" loading="lazy">
+          <div class="photo-caption">Vacchiano Giving a Lecture at the NYBCS</div>
+        </div>
+        <div class="photo-item" data-index="38">
+          <img src="images/photo-1038.jpg" alt="Vacchiano in His Juilliard Studio" loading="lazy">
+          <div class="photo-caption">Vacchiano in His Juilliard Studio</div>
+        </div>
+        <div class="photo-item" data-index="39">
+          <img src="images/photo-1039.jpg" alt="Vacchiano in Lincoln Center" loading="lazy">
+          <div class="photo-caption">Vacchiano in Lincoln Center</div>
+        </div>
+        <div class="photo-item" data-index="40">
+          <img src="images/photo-1040.jpg" alt="Vacchiano in Spotlight" loading="lazy">
+          <div class="photo-caption">Vacchiano in Spotlight</div>
+        </div>
+        <div class="photo-item" data-index="41">
+          <img src="images/photo-1041.jpg" alt="Vacchiano in the Country" loading="lazy">
+          <div class="photo-caption">Vacchiano in the Country</div>
+        </div>
+        <div class="photo-item" data-index="42">
+          <img src="images/photo-1042.jpg" alt="Vacchiano in Winter of 1997" loading="lazy">
+          <div class="photo-caption">Vacchiano in Winter of 1997</div>
+        </div>
+        <div class="photo-item" data-index="43">
+          <img src="images/photo-1043.jpg" alt="Vacchiano Playing Close Up" loading="lazy">
+          <div class="photo-caption">Vacchiano Playing Close Up</div>
+        </div>
+        <div class="photo-item" data-index="44">
+          <img src="images/photo-1044.jpg" alt="Vacchiano Playing F Trumpet" loading="lazy">
+          <div class="photo-caption">Vacchiano Playing F Trumpet</div>
+        </div>
+        <div class="photo-item" data-index="45">
+          <img src="images/photo-1045.jpg" alt="Vacchiano Playing, Portrait" loading="lazy">
+          <div class="photo-caption">Vacchiano Playing, Portrait</div>
+        </div>
+        <div class="photo-item" data-index="46">
+          <img src="images/photo-1046.jpg" alt="Vacchiano Portrait 2" loading="lazy">
+          <div class="photo-caption">Vacchiano Portrait 2</div>
+        </div>
+        <div class="photo-item" data-index="47">
+          <img src="images/photo-1047.jpg" alt="Vacchiano Portrait" loading="lazy">
+          <div class="photo-caption">Vacchiano Portrait</div>
+        </div>
+        <div class="photo-item" data-index="48">
+          <img src="images/photo-1048.jpg" alt="Vacchiano Practicing in Basement" loading="lazy">
+          <div class="photo-caption">Vacchiano Practicing in Basement</div>
+        </div>
+        <div class="photo-item" data-index="49">
+          <img src="images/photo-1049.jpg" alt="Vacchiano Practicing" loading="lazy">
+          <div class="photo-caption">Vacchiano Practicing</div>
+        </div>
+        <div class="photo-item" data-index="50">
+          <img src="images/photo-1050.jpg" alt="Vacchiano Smiling Inside Juilliard Studio" loading="lazy">
+          <div class="photo-caption">Vacchiano Smiling Inside Juilliard Studio</div>
+        </div>
+        <div class="photo-item" data-index="51">
+          <img src="images/photo-1051.jpg" alt="Vacchiano Talking about Mouthpieces" loading="lazy">
+          <div class="photo-caption">Vacchiano Talking about Mouthpieces</div>
+        </div>
+        <div class="photo-item" data-index="52">
+          <img src="images/photo-1052.jpg" alt="Vacchiano Telling Stories at His B-day Party at Juilliard" loading="lazy">
+          <div class="photo-caption">Vacchiano Telling Stories at His B-day Party at Juilliard</div>
+        </div>
+        <div class="photo-item" data-index="53">
+          <img src="images/photo-1053.jpg" alt="Vacchiano Trying out New Leadpipes" loading="lazy">
+          <div class="photo-caption">Vacchiano Trying out New Leadpipes</div>
+        </div>
+        <div class="photo-item" data-index="54">
+          <img src="images/photo-1054.jpg" alt="Vacchiano with Grandchildren — Jennifer, Michael, Emily, Carolyn" loading="lazy">
+          <div class="photo-caption">Vacchiano with Grandchildren — Jennifer, Michael, Emily, Carolyn</div>
+        </div>
+        <div class="photo-item" data-index="55">
+          <img src="images/photo-1055.jpg" alt="Vacchiano with Polisis at Honorary Doctorate Ceremony" loading="lazy">
+          <div class="photo-caption">Vacchiano with Polisis at Honorary Doctorate Ceremony</div>
+        </div>
+        <div class="photo-item" data-index="56">
+          <img src="images/photo-1056.jpg" alt="Vacchiano's House in Flushing" loading="lazy">
+          <div class="photo-caption">Vacchiano's House in Flushing</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8592;</button>
+  <div class="lightbox-inner">
+    <img class="lightbox-img" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+  <button class="lightbox-nav lightbox-next" aria-label="Next">&#8594;</button>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Brian A. Shook<br>
+    <a href="https://www.amazon.com/Last-Stop-Carnegie-Hall-Philharmonic/dp/1574413066/ref=cm_cr_arp_d_product_top?ie=UTF8"><em>Last Stop, Carnegie Hall: New York Philharmonic Trumpeter William Vacchiano</em></a> &mdash; UNT Press</p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const PHOTOS = [{"src":"images/photo-1000.jpg","cap":"85th B-day Party at Juilliard"},{"src":"images/photo-1001.jpg","cap":"Albert Mingrone, Varriale, Vacchiano, Joseph Greco"},{"src":"images/photo-1002.jpg","cap":"B-day Party at Juilliard, photo by Broiles"},{"src":"images/photo-1003.jpg","cap":"Bob Johnson, Dick San Filippo"},{"src":"images/photo-1004.jpg","cap":"Glantz, Vacchiano, Prager"},{"src":"images/photo-1005.jpg","cap":"Goldfarb, Vacc, Roger Murtha, Edwin De Groat, Claude Gordon"},{"src":"images/photo-1006.jpg","cap":"Gould, Schwarz, Vacc, Mills"},{"src":"images/photo-1007.jpg","cap":"Izzy Blank and Vacchiano"},{"src":"images/photo-1008.jpg","cap":"Lavignac Solfege Book"},{"src":"images/photo-1009.jpg","cap":"Ligotti and Vacchiano"},{"src":"images/photo-1010.jpg","cap":"Maria Alessi, Joe Jr, Carmine Fornarotto, and Vacchiano"},{"src":"images/photo-1011.jpg","cap":"NYP Brass"},{"src":"images/photo-1012.jpg","cap":"NYP in 1939, Full Orchestra"},{"src":"images/photo-1013.jpg","cap":"NYP on Japan Tour, 1961"},{"src":"images/photo-1014.jpg","cap":"Outside the Tokyo Hotel, May 9th, 1961"},{"src":"images/photo-1015.jpg","cap":"Polisi, Vacchiano, and Romm"},{"src":"images/photo-1016.jpg","cap":"Prager and Vacchiano Rehearsing"},{"src":"images/photo-1017.jpg","cap":"Soper, Vacchiano, Schlueter at 80th B-day"},{"src":"images/photo-1018.jpg","cap":"Tenore and Vacc 2000 in Queens"},{"src":"images/photo-1019.jpg","cap":"The Crying Bench"},{"src":"images/photo-1020.jpg","cap":"Vacc Shaking Hands at 90th B-day Party"},{"src":"images/photo-1021.jpg","cap":"Vacchiano's NYP ID Card"},{"src":"images/photo-1022.jpg","cap":"Vacchiano and Arturo Sandoval"},{"src":"images/photo-1023.jpg","cap":"Vacchiano and Baker"},{"src":"images/photo-1024.jpg","cap":"Vacchiano and Fornarotto"},{"src":"images/photo-1025.jpg","cap":"Vacchiano and Fred Mills, 1995"},{"src":"images/photo-1026.jpg","cap":"Vacchiano and Mase at 85th B-day Party"},{"src":"images/photo-1027.jpg","cap":"Vacchiano and Ranier De Intinis"},{"src":"images/photo-1028.jpg","cap":"Vacchiano and Schwarz in Aspen"},{"src":"images/photo-1029.jpg","cap":"Vacchiano and Varriale at Gettysburg"},{"src":"images/photo-1030.jpg","cap":"Vacchiano at Hartt School of Music"},{"src":"images/photo-1031.jpg","cap":"Vacchiano at His NYBCS Roast"},{"src":"images/photo-1032.jpg","cap":"Vacchiano at the Beach in Maine"},{"src":"images/photo-1033.jpg","cap":"Vacchiano Casual"},{"src":"images/photo-1034.jpg","cap":"Vacchiano Conducting"},{"src":"images/photo-1035.jpg","cap":"Vacchiano Feeding the Ducks and Geese"},{"src":"images/photo-1036.jpg","cap":"Vacchiano Getting Ready to Enjoy a Lobster Dinner"},{"src":"images/photo-1037.jpg","cap":"Vacchiano Giving a Lecture at the NYBCS"},{"src":"images/photo-1038.jpg","cap":"Vacchiano in His Juilliard Studio"},{"src":"images/photo-1039.jpg","cap":"Vacchiano in Lincoln Center"},{"src":"images/photo-1040.jpg","cap":"Vacchiano in Spotlight"},{"src":"images/photo-1041.jpg","cap":"Vacchiano in the Country"},{"src":"images/photo-1042.jpg","cap":"Vacchiano in Winter of 1997"},{"src":"images/photo-1043.jpg","cap":"Vacchiano Playing Close Up"},{"src":"images/photo-1044.jpg","cap":"Vacchiano Playing F Trumpet"},{"src":"images/photo-1045.jpg","cap":"Vacchiano Playing, Portrait"},{"src":"images/photo-1046.jpg","cap":"Vacchiano Portrait 2"},{"src":"images/photo-1047.jpg","cap":"Vacchiano Portrait"},{"src":"images/photo-1048.jpg","cap":"Vacchiano Practicing in Basement"},{"src":"images/photo-1049.jpg","cap":"Vacchiano Practicing"},{"src":"images/photo-1050.jpg","cap":"Vacchiano Smiling Inside Juilliard Studio"},{"src":"images/photo-1051.jpg","cap":"Vacchiano Talking about Mouthpieces"},{"src":"images/photo-1052.jpg","cap":"Vacchiano Telling Stories at His B-day Party at Juilliard"},{"src":"images/photo-1053.jpg","cap":"Vacchiano Trying out New Leadpipes"},{"src":"images/photo-1054.jpg","cap":"Vacchiano with Grandchildren — Jennifer, Michael, Emily, Carolyn"},{"src":"images/photo-1055.jpg","cap":"Vacchiano with Polisis at Honorary Doctorate Ceremony"},{"src":"images/photo-1056.jpg","cap":"Vacchiano's House in Flushing"}];
+    const lbOverlay = document.getElementById('lightbox');
+    const lbImg = lbOverlay.querySelector('.lightbox-img');
+    const lbCap = lbOverlay.querySelector('.lightbox-caption');
+    let lbCurrent = 0;
+
+    function lbOpen(idx) {
+      lbCurrent = idx;
+      lbImg.src = PHOTOS[idx].src;
+      lbImg.alt = PHOTOS[idx].cap;
+      lbCap.textContent = PHOTOS[idx].cap;
+      lbOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function lbClose() {
+      lbOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      lbCurrent = (lbCurrent + dir + PHOTOS.length) % PHOTOS.length;
+      lbImg.src = PHOTOS[lbCurrent].src;
+      lbImg.alt = PHOTOS[lbCurrent].cap;
+      lbCap.textContent = PHOTOS[lbCurrent].cap;
+    }
+
+    document.querySelectorAll('.photo-item').forEach(el => {
+      el.addEventListener('click', () => lbOpen(+el.dataset.index));
+    });
+    lbOverlay.querySelector('.lightbox-close').addEventListener('click', lbClose);
+    lbOverlay.querySelector('.lightbox-prev').addEventListener('click', () => lbNav(-1));
+    lbOverlay.querySelector('.lightbox-next').addEventListener('click', () => lbNav(1));
+    lbOverlay.addEventListener('click', e => { if (e.target === lbOverlay) lbClose(); });
+    document.addEventListener('keydown', e => {
+      if (!lbOverlay.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') lbNav(-1);
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'Escape') lbClose();
+    });
+  })();
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

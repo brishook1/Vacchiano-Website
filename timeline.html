@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline — William Vacchiano</title>
+  <meta name="description" content="A chronological timeline of the life of William Vacchiano, principal trumpet of the New York Philharmonic.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500;1,8..60,600&family=Montserrat:wght@600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Timeline page-specific ── */
+
+    .tl-hero {
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .tl-hero h1 { margin-bottom: 0.5rem; }
+    .tl-hero p { color: var(--text-muted); font-style: italic; font-size: 1.05rem; }
+
+    /* spine wrapper */
+    .tl-body {
+      position: relative;
+      padding: 4rem 0 6rem;
+    }
+    .tl-body::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-dim) 6%, var(--gold-dim) 94%, transparent);
+      transform: translateX(-50%);
+    }
+
+    /* chapter heading */
+    .tl-chapter {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin: 3.5rem auto 2rem;
+      max-width: 480px;
+    }
+    .tl-chapter:first-child { margin-top: 0; }
+    .tl-chapter-label {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--bg);
+      padding: 0 1rem;
+      position: relative;
+    }
+    .tl-chapter-rule {
+      height: 1px;
+      background: var(--border-soft);
+      position: relative;
+      margin-top: -0.75em;
+    }
+
+    /* entry row */
+    .tl-entry {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      margin-bottom: 2rem;
+      gap: 0;
+    }
+    /* left-side entries */
+    .tl-entry.left {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    /* right-side entries */
+    .tl-entry.right {
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+    }
+
+    .tl-card {
+      width: calc(50% - 2.5rem);
+      background: var(--bg-raised);
+      border: 1px solid var(--border-soft);
+      border-radius: 3px;
+      padding: 1rem 1.25rem;
+      position: relative;
+      transition: border-color 200ms ease;
+    }
+    .tl-card:hover { border-color: var(--gold-dim); }
+
+    /* connector line from card to dot */
+    .tl-entry.left .tl-card::after {
+      content: '';
+      position: absolute;
+      right: -2.5rem;
+      top: 1.2rem;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--border-soft);
+    }
+    .tl-entry.right .tl-card::after {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 1.2rem;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--border-soft);
+    }
+
+    /* spine dot */
+    .tl-dot {
+      flex: none;
+      width: 5rem; /* covers the gap on both sides */
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .tl-dot-inner {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--gold-dim);
+      transition: background 200ms, box-shadow 200ms;
+    }
+    .tl-entry:hover .tl-dot-inner {
+      background: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold), 0 0 8px rgba(196,147,42,0.35);
+    }
+
+    /* spacer col on the other side */
+    .tl-spacer { width: calc(50% - 2.5rem); }
+
+    /* card content */
+    .tl-year {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .tl-text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin: 0;
+    }
+    .tl-text em { color: var(--white); font-style: italic; }
+
+    /* ── 1935 CENTERPIECE ── */
+    .tl-centerpiece {
+      position: relative;
+      z-index: 2;
+      margin: 2rem auto;
+      max-width: 680px;
+      background: var(--bg-raised);
+      border: 1px solid var(--gold-dim);
+      border-radius: 3px;
+      padding: 2.5rem 3rem;
+      text-align: center;
+    }
+    .tl-centerpiece::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 10%; right: 10%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .tl-centerpiece .tl-year {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .tl-centerpiece h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+    .tl-centerpiece p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      text-align: left;
+    }
+    .tl-centerpiece p:last-child { margin-bottom: 0; }
+    .tl-centerpiece ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 1rem;
+    }
+    .tl-centerpiece ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      margin-bottom: 0.4rem;
+      position: relative;
+    }
+    .tl-centerpiece ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+    }
+    .tl-spine-dot-large {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--gold), 0 0 12px rgba(196,147,42,0.5);
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* ── Bernstein pull-quote ── */
+    .tl-pullquote {
+      position: relative;
+      z-index: 2;
+      margin: 0 auto 2rem;
+      max-width: 560px;
+      padding: 1.75rem 2.5rem;
+      border-left: 2px solid var(--gold-dim);
+      background: var(--bg-surface);
+    }
+    .tl-pullquote p {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+    .tl-pullquote cite {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* scroll-reveal */
+    .tl-entry, .tl-chapter, .tl-centerpiece, .tl-pullquote {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .tl-entry.visible, .tl-chapter.visible,
+    .tl-centerpiece.visible, .tl-pullquote.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 680px) {
+      .tl-body::before { left: 1.5rem; }
+      .tl-entry { flex-direction: row !important; justify-content: flex-start !important; }
+      .tl-spacer { display: none; }
+      .tl-dot { width: 3rem; flex: none; }
+      .tl-card { width: calc(100% - 3rem); }
+      .tl-card::after { display: none; }
+      .tl-entry.left .tl-card::after,
+      .tl-entry.right .tl-card::after { display: none; }
+      .tl-centerpiece { margin-left: 3rem; max-width: none; padding: 1.5rem 1.25rem; }
+      .tl-pullquote { margin-left: 3rem; max-width: none; padding: 1.25rem 1.25rem; }
+      .tl-chapter { text-align: left; margin-left: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-title">William <span>Vacchiano</span></a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="teacher.html">The Teacher</a>
+  <a href="lineage.html">Lineage</a>
+  <a href="influence.html">Influence</a>
+  <a href="students.html">Students</a>
+  <a href="timeline.html" class="nav-active">Timeline</a>
+  <a href="quotes.html">Quotes</a>
+  <a href="photos.html">Photos</a>
+  <a href="watch.html">Interviews</a>
+  <a href="recordings.html">Recordings</a>
+  <a href="biography.html">Biography</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="tl-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Life &amp; Career</p>
+      <h1>A Life in Music</h1>
+      <p>William Vacchiano &nbsp;·&nbsp; 1912–2005</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tl-body">
+
+
+      <!-- entries in strict chronological order; no chapter headings -->
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1903</div>
+          <p class="tl-text">Vacchiano's father, Rafaello Vacchiano, immigrated from Cicciano, Italy, to the United States through Ellis Island.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">c. 1904</div>
+          <p class="tl-text">Rafaello brought his wife Anna and daughters Mary and Margarita to America after saving enough money for their passage.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1909</div>
+          <p class="tl-text">The Vacchiano family moved from Brooklyn, New York, to Portland, Maine.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">May 23, 1912</div>
+          <p class="tl-text">William Anthony Vacchiano was born in Portland, Maine, the seventh of eight children of Rafaello and Anna Vacchiano.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">c. 1918 &nbsp;<span style="font-weight:400;color:var(--text-muted);font-size:0.85em;">(age 6)</span></div>
+          <p class="tl-text">Heard his first live opera performance — Verdi's <em>La Traviata</em> — at Portland City Hall Auditorium.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">c. 1920–1921 &nbsp;<span style="font-weight:400;color:var(--text-muted);font-size:0.85em;">(age 8–9)</span></div>
+          <p class="tl-text">After an accident involving a friend's baritone horn, he entered the music program of Mr. DiNobile and began intensive solfège study.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">c. 1924 &nbsp;<span style="font-weight:400;color:var(--text-muted);font-size:0.85em;">(age 12)</span></div>
+          <p class="tl-text">Began studying cornet with Frank Knapp.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">c. 1926 &nbsp;<span style="font-weight:400;color:var(--text-muted);font-size:0.85em;">(age 14)</span></div>
+          <p class="tl-text">Appointed by Knapp to third trumpet in the Portland Municipal Orchestra (today's Portland Symphony Orchestra).</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">c. 1928–1930</div>
+          <p class="tl-text">Traveled regularly to Boston for lessons with Boston Symphony principal trumpet Georges Mager. Also studied with Walter M. Smith, Louis Kloepfel, and Gustav Heim.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1930</div>
+          <p class="tl-text">Married Ethel Josephine LaParde, a piano major and clarinet minor at the Institute of Musical Art.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">Early 1930s</div>
+          <p class="tl-text">Moved to New York intending to pursue accounting and attend St. John's University. Shortly after arriving, met a friend from Portland in Times Square who recommended he study with Max Schlossberg.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">Early 1930s</div>
+          <p class="tl-text">Auditioned for Max Schlossberg and was offered a full scholarship to the Institute of Musical Art — predecessor of The Juilliard School.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1933</div>
+          <p class="tl-text">Traveled to the Chicago World's Fair, where Edward Llewellyn recognized him as a student of Max Schlossberg solely from his playing style.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1930s</div>
+          <p class="tl-text">Performed with Walter Damrosch's WPA orchestra during the Great Depression; toured with the George Barrere Symphony; served as principal trumpet at the Chautauqua Music Festival.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <!-- ── 1935 CENTERPIECE ── -->
+      <div class="tl-centerpiece">
+        <div class="tl-spine-dot-large"></div>
+        <div class="tl-year">1935</div>
+        <h3>One Day, Two Orchestras</h3>
+        <p>In a feat never duplicated, Vacchiano won auditions for both the Metropolitan Opera Orchestra and the New York Philharmonic on the same day.</p>
+        <ul>
+          <li>Joined the New York Philharmonic as third trumpet and assistant principal</li>
+          <li>Had also been engaged to play in the pit for Cole Porter's <em>Anything Goes</em></li>
+          <li>Began teaching at The Juilliard School — a tenure that would last 67 years</li>
+          <li>Purchased a house in Flushing, New York where he would live for the rest of his life</li>
+        </ul>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1935–1937</div>
+          <p class="tl-text">Third trumpet and assistant principal, New York Philharmonic.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1935–2002</div>
+          <p class="tl-text">Faculty, The Juilliard School for 67 years.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1935–2005</div>
+          <p class="tl-text">Maintained an extensive private teaching studio in Flushing, New York.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1937</div>
+          <p class="tl-text">Son Ralph Vacchiano was born.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1937–1999</div>
+          <p class="tl-text">Faculty, Manhattan School of Music.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1937–1983</div>
+          <p class="tl-text">Faculty, Mannes College of Music.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1942</div>
+          <p class="tl-text">Appointed principal trumpet by Bruno Walter, beginning a 31-year tenure that would become the longest continuous principal trumpet appointment in Philharmonic history at the time of his retirement.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <!-- Bernstein pull-quote -->
+      <div class="tl-pullquote">
+        <p style="font-style:normal;font-family:var(--font-body);font-size:0.95rem;">On November 14, 1943, a 25-year-old Leonard Bernstein made his emergency conducting debut with the Philharmonic after Bruno Walter fell ill. Vacchiano was principal trumpet that day.</p>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1942–1973</div>
+          <p class="tl-text">Served as principal trumpet, performing under Toscanini, Barbirolli, Bruno Walter, Rodzinski, Stokowski, Mitropoulos, Bernstein, and Boulez. Played in the world premieres of nearly 200 works.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1944</div>
+          <p class="tl-text">Daughter Jo Ann Vacchiano was born.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1952</div>
+          <p class="tl-text">Completed a bachelor's degree in trumpet performance at Manhattan School of Music.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1953</div>
+          <p class="tl-text">Completed a master's degree in trumpet performance at Manhattan School of Music.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1970–1973, 1991–1994</div>
+          <p class="tl-text">Faculty, Queens College.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1973</div>
+          <p class="tl-text">Retired from the New York Philharmonic after 38 years, ending a 31-year tenure as principal trumpet. Transitioned into a teaching and publishing focused phase of life.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1973–1976</div>
+          <p class="tl-text">Faculty, North Carolina School of the Arts.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1978</div>
+          <p class="tl-text">Received the New York Brass Conference for Scholarships Journal Award of Recognition.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1984</div>
+          <p class="tl-text">Received the International Trumpet Guild Honorary Award.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">1991</div>
+          <p class="tl-text">The Juilliard School established the William Vacchiano Award in Trumpet.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">1990s–early 2000s</div>
+          <p class="tl-text">Published nineteen trumpet method and etude books. Continued teaching well into his nineties.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">May 23, 2003</div>
+          <p class="tl-text">Received an Honorary Doctorate from The Juilliard School on his 91st birthday.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">September 19, 2005</div>
+          <p class="tl-text">William Vacchiano died at Cabrini Medical Center in Manhattan. He was 93.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry left">
+        <div class="tl-card">
+          <div class="tl-year">2006</div>
+          <p class="tl-text">Brian Shook completed the doctoral dissertation <em>William Vacchiano: His Career as a Trumpet Player and Pedagogue</em>, which became the basis for Vacchiano's biography.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-entry right">
+        <div class="tl-card">
+          <div class="tl-year">April 2011</div>
+          <p class="tl-text"><a href="https://www.amazon.com/Last-Stop-Carnegie-Hall-Philharmonic/dp/1574413066/ref=cm_cr_arp_d_product_top?ie=UTF8" style="color:var(--gold-light);"><em>Last Stop, Carnegie Hall: New York Philharmonic Trumpeter William Vacchiano</em></a> by Brian A. Shook, with a foreword by Wynton Marsalis, published by the University of North Texas Press.</p>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+    </div><!-- /.tl-body -->
+  </div><!-- /.container -->
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Brian A. Shook<br>
+    <a href="https://www.amazon.com/Last-Stop-Carnegie-Hall-Philharmonic/dp/1574413066/"><em>Last Stop, Carnegie Hall: New York Philharmonic Trumpeter William Vacchiano</em></a> &mdash; UNT Press</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Scroll-reveal for timeline elements
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 40);
+        tlObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.tl-entry, .tl-chapter, .tl-centerpiece, .tl-pullquote').forEach(el => {
+    tlObserver.observe(el);
+  });
+</script>
+</body>
+</html>
